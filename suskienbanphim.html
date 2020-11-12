@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="bong" src="bong.PNG" style="position: absolute; left: 0; top: 0;" width="230" height="300"/>
+</body>
+</html>
+<script>
+    function upArrovPressed() {
+        var element = document.getElementById("bong");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+
+    function dovArrovPressed() {
+        var element = document.getElementById("bong");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+
+    function rightArrovPressed() {
+        var element = document.getElementById("bong");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function leftArrovPressed() {
+        var element = document.getElementById("bong");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+
+    function moveSelecttion(evt) {
+        switch (evt.keyCode){
+            case 37:
+                leftArrovPressed();
+                break;
+            case 39:
+                rightArrovPressed();
+                break;
+            case 38:
+                upArrovPressed();
+                break;
+            case 40:
+                dovArrovPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelecttion);
+    }
+</script>
